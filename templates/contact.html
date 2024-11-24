@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Ninjas - Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')
+    }}"">
+  </head>
+  <body class="contact-page">
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/logo.jpg') }}"
+        alt="Code Ninjas Logo"
+      />
+      <h1>Code Ninjas</h1>
+      {% include 'navbar.html' %}
+    </header>
+
+    <main class="page-content">
+      <section class="page-box">
+        <h2>Contact Us</h2>
+        <p>Phone number: (832) 200-1419</p>
+        <p>
+          Email: <a href="mailto:team@codeninjas.com">team@codeninjas.com</a>
+        </p>
+        <p>Address: 1914 Coding Street, Houston, TX 77002</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Code Ninjas</p>
+    </footer>
+  </body>
+</html>

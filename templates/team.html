@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Ninjas - Team</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body class="team-page">
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/logo.jpg') }}"
+        alt="Code Ninjas Logo"
+      />
+      <h1>Code Ninjas</h1>
+      {% include 'navbar.html' %}
+    </header>
+
+    <main class="team-main">
+      <section class="team-container">
+        <div class="member-box">
+          <button class="arrow-left" onclick="showPreviousMember()">
+            &#8592;
+          </button>
+          <div class="member-content">
+            <img
+              id="member-photo"
+              src="static/images/shifa.jpg"
+              alt="Shifa Maknojia"
+              class="member-photo"
+            />
+            <div class="member-info">
+              <h3 id="member-name">Shifa Maknojia</h3>
+              <p id="member-description">
+                Full Stack Developer | Passionate about solving complex coding
+                challenges.
+              </p>
+              <div id="member-links">
+                <a href="/shifa" target="_blank">Webpage</a>
+                <a href="https://www.linkedin.com/in/shifa-mak/" target="_blank"
+                  >LinkedIn</a
+                >
+              </div>
+            </div>
+          </div>
+          <button class="arrow-right" onclick="showNextMember()">
+            &#8594;
+          </button>
+        </div>
+
+        <div class="dots">
+          <span class="dot" onclick="showMember(0)"></span>
+          <span class="dot" onclick="showMember(1)"></span>
+          <span class="dot" onclick="showMember(2)"></span>
+          <span class="dot" onclick="showMember(3)"></span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Code Ninjas</p>
+    </footer>
+
+    <script src="static/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My Personal Webpage</title>
+    <style>
+      body {
+        background-image: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+        border: 2px solid white;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        color: white;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+      }
+
+      h1 {
+        color: darkblue;
+        font-family: "Georgia", serif;
+        margin-top: 0;
+      }
+
+      h2 {
+        color: darkgreen;
+        font-family: "Courier New", monospace;
+      }
+
+      p {
+        color: white;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .spacer {
+        line-height: 2; /* Creates space between elements */
+      }
+
+      /* Style for the image in the top-right corner of the container */
+      .top-right-image {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 200px; /* Increased image size */
+        height: auto; /* Maintain aspect ratio */
+        border: 2px solid white;
+        border-radius: 10px;
+      }
+
+      /* Services section styling */
+      .services {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 10px;
+        border: 1px solid white;
+      }
+
+      .service-item {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: lightgreen;
+        font-size: 18px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        body {
+          background-size: contain;
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .top-right-image {
+          width: 150px; /* Smaller image for smaller screens */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Image in the top-right corner of the container -->
+      <img
+        src="static/images/muhammad.jpg"
+        alt="My Favorite Picture"
+        class="top-right-image"
+      />
+
+      <h1>Welcome to My Webpage</h1>
+      <p>My name is Muhammad Amin</p>
+
+      <!-- Spacer to create 4 lines of space -->
+      <div class="spacer">&nbsp;</div>
+      <div class="spacer">&nbsp;</div>
+
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm a final-year computer science student with a deep enthusiasm
+        for technology and innovation. My academic journey has been driven by a
+        curiosity to understand how technology shapes the modern world.
+      </p>
+      <p>
+        Outside of academics, I enjoy exploring the outdoors, traveling to
+        scenic destinations, and immersing myself in creative projects. I am
+        particularly fascinated by how software can transform ideas into
+        impactful solutions, and I aspire to contribute to groundbreaking
+        advancements in the tech industry.
+      </p>
+
+      <!-- Services Section -->
+      <h2>Services I Provide</h2>
+      <div class="services">
+        <div class="service-item">
+          <strong>Web Development:</strong> Building responsive and visually
+          appealing websites tailored to your needs.
+        </div>
+        <div class="service-item">
+          <strong>Technical Support:</strong> Providing troubleshooting and
+          maintenance for hardware and software issues.
+        </div>
+        <div class="service-item">
+          <strong>Mobile App Development:</strong> Designing and developing
+          mobile applications for iOS and Android platforms.
+        </div>
+        <div class="service-item">
+          <strong>Content Creation:</strong> Crafting engaging articles, blogs,
+          and digital media to boost online presence.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

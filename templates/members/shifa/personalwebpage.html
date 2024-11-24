@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Personal Webpage</title>
+    <style>
+      /* General Styling */
+      body {
+        font-family: "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          #56c5b8,
+          #acb6e5
+        ); /* Darkened sea green */
+        color: #333;
+        box-sizing: border-box; /* Applying box model */
+      }
+
+      /* Box Model: Ensure padding, border, and margin are respected */
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      /* Container and Layout */
+      .container {
+        max-width: 1000px;
+        margin: 50px auto;
+        background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: flex-start;
+        transition: transform 0.3s ease; /* Animation for hover effect */
+      }
+
+      .container:hover {
+        transform: scale(1.02); /* Slight scale up on hover */
+      }
+
+      .left-column {
+        flex: 1;
+        text-align: left;
+      }
+
+      .right-column {
+        flex: 3;
+        margin-left: 30px;
+      }
+
+      /* Image Styling */
+      img {
+        max-width: 300px; /* Increased the photo size */
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        border: 4px solid #a996e3; /* Changed border to light purple */
+        margin-bottom: 20px; /* Added margin for box model */
+        transition: transform 0.3s ease;
+      }
+
+      img:hover {
+        transform: scale(1.05); /* Image zoom-in effect on hover */
+      }
+
+      /* Typography */
+      h1 {
+        font-size: 2.7rem;
+        margin-bottom: 20px;
+        color: #56c5b8; /* Darkened sea green */
+        font-family: "Lora", serif; /* Changed font */
+        font-weight: bold;
+        animation: fadeIn 2s ease-in; /* Fade in animation */
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-top: 40px;
+        color: #56c5b8; /* Darkened sea green */
+        font-family: "Lora", serif; /* Changed font */
+        animation: fadeIn 1.5s ease-in; /* Fade in animation */
+      }
+
+      /* Fade In Animation for headings */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Smaller font size for description and bullet points */
+      p,
+      ul,
+      table,
+      form {
+        font-size: 0.9rem; /* Slightly smaller font size */
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      /* Table Styling */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #a996e3; /* Changed table border to light purple */
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #a996e3; /* Changed header background to light purple */
+        color: white;
+      }
+
+      td {
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Form Styling */
+      .form-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .form-container:hover {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Form hover effect */
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s ease;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus {
+        border-color: #a996e3; /* Light purple border on focus */
+      }
+
+      input[type="submit"] {
+        background-color: #a996e3; /* Changed submit button to light purple */
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        animation: buttonPulse 2s infinite; /* Animation for pulsing button */
+      }
+
+      input[type="submit"]:hover {
+        background-color: #9577d4; /* Slightly darker purple on hover */
+      }
+
+      /* Button Pulse Animation */
+      @keyframes buttonPulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .left-column {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        img {
+          max-width: 100%; /* Ensure the image is responsive */
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem; /* Smaller font size on smaller devices */
+        }
+
+        h2 {
+          font-size: 1.5rem; /* Smaller subheading */
+        }
+
+        input[type="submit"] {
+          padding: 10px 15px; /* Adjust button padding */
+        }
+      }
+
+      #greeting {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #56c5b8; /* Match the dark sea green color */
+        margin-bottom: 20px;
+        animation: fadeIn 1.5s ease-in; /* Optional: fade-in animation */
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Added font link -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-column">
+        <img src="static/images/shifa.jpg" alt="Shifa Maknojia Photo" />
+      </div>
+      <div class="right-column">
+        <h1>Shifa Maknojia</h1>
+        <p>
+          Welcome to my personal webpage! I am currently a Senior pursuing a
+          Bachelor of Science in Computer Science with a focus on Artificial
+          Intelligence and Cybersecurity at the University of Houston -
+          Downtown.
+        </p>
+        <p>
+          As an Undergraduate Student Researcher at UHD, I am actively involved
+          in two research projects under the guidance of Dr. Pakhrin. In
+          addition to my research, I am engaged with several organizations on
+          campus, including:
+        </p>
+        <ul>
+          <li>Scholars Academy (SA)</li>
+          <li>Association of Computing Machinery (ACM)</li>
+          <li>
+            Sigma Alpha Pi - The National Society of Leadership and Success
+            (NSLS)
+          </li>
+          <li>Financial Management Association (FMA)</li>
+          <li>Girl Genius (GG)</li>
+        </ul>
+        <p>
+          Looking ahead, I am excited to pursue a Master of Science in
+          Artificial Intelligence at the University of Texas at Austin.
+        </p>
+        <p>
+          Beyond my academic and research endeavors, I am passionate about
+          volunteering, cooking, painting, and dancing. These activities enrich
+          my life and keep me inspired.
+        </p>
+
+        <!-- Projects List -->
+        <h2>My Projects</h2>
+        <ul>
+          <li>AI-based Chatbot System</li>
+          <li>Cybersecurity Threat Detection Tool</li>
+          <li>Web-based Inventory Management System</li>
+          <li>Database Management System for Schools</li>
+        </ul>
+
+        <!-- Programming Languages Table -->
+        <h2>Programming Languages I Know</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>Proficiency</th>
+              <th>Years of Experience</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Python</td>
+              <td>Advanced</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>Intermediate</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>C++</td>
+              <td>Intermediate</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>SQL</td>
+              <td>Advanced</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Contact Form -->
+        <h2>Contact Me</h2>
+        <div class="form-container">
+          <form action="submit_form.php" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <input type="submit" value="Send Message" />
+          </form>
+        </div>
+
+        <p>
+          Feel free to connect with me on
+          <a
+            href="https://www.linkedin.com/in/shifa-mak/"
+            target="_blank"
+            class="linkedin-btn"
+            >LinkedIn</a
+          >.
+        </p>
+      </div>
+    </div>
+    <script>
+      // JavaScript function to display a greeting based on the current time
+      function displayGreeting() {
+        const greetingContainer = document.createElement("p"); // Create a new <p> element
+        greetingContainer.id = "greeting"; // Assign an ID for easy styling
+
+        // Get the current hour of the day
+        const hour = new Date().getHours();
+        let greetingMessage;
+
+        // Determine the greeting based on the hour
+        if (hour < 12) {
+          greetingMessage = "Good Morning!";
+        } else if (hour < 18) {
+          greetingMessage = "Good Afternoon!";
+        } else {
+          greetingMessage = "Good Evening!";
+        }
+
+        // Set the greeting message as the content of the <p> element
+        greetingContainer.textContent = greetingMessage;
+
+        // Append the greeting to the right column at the top
+        document.querySelector(".right-column").prepend(greetingContainer);
+      }
+
+      // Call the function when the page loads
+      window.onload = displayGreeting;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,397 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  padding: 20px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+  height: 50px;
+}
+
+header h1 {
+  font-size: 2em;
+  color: #9c27b0;
+  margin-left: 10px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: white;
+  padding: 20px 30px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  color: #333;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Box Styling - Common for all pages */
+.page-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 800px;
+}
+
+.page-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+form select,
+form button,
+textarea,
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #7b1fa2;
+}
+
+form label {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Home Page Styles */
+main.home-page {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.services {
+  text-align: center;
+  padding: 60px 20px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.services h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.service-boxes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.service-box {
+  background-color: #19f2d9;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.service-box img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.service-box h3 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Page Layout */
+.team-main {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+  padding: 20px;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  max-width: 1000px;
+  position: relative;
+}
+
+.member-box {
+  position: relative;
+  background-color: #bbdefb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 852px;
+  height: 296px;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.arrow-left,
+.arrow-right {
+  background-color: transparent;
+  border: none;
+  font-size: 2.5em;
+  color: #9c27b0;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.arrow-left {
+  left: -60px;
+}
+
+.arrow-right {
+  right: -60px;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.arrow-left:active,
+.arrow-right:active {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.member-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.member-photo {
+  width: 160px;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.member-info {
+  flex-grow: 1;
+}
+
+.member-info h3 {
+  font-size: 1.8em;
+  margin: 10px 0;
+}
+
+.member-info p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.member-info a {
+  color: #9c27b0;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.member-info a:hover {
+  text-decoration: underline;
+}
+
+.dots {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #9c27b0;
+}
+
+.dot:hover {
+  background-color: #7b1fa2;
+  transform: scale(1.2);
+}
+
+/* Booking Page */
+.booking-page {
+  background-color: #bbdefb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+form select,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #7b1fa2;
+}
+
+form label {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* About & Contact Pages */
+.page-content {
+  background-color: #bbdefb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+form select,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #7b1fa2;
+}
+
+form label {
+  font-size: 1.2em;
+  color: #333;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Ninjas - Services</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body class="home-page">
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/logo.jpg') }}"
+        alt="Code Ninjas Logo"
+      />
+      <h1>Code Ninjas</h1>
+      <nav>{% include 'navbar.html' %}</nav>
+    </header>
+
+    <main class="booking-page">
+      <div class="booking-container">
+        <div class="page-box">
+          <h2>Book a Service</h2>
+          <form action="/booking" method="POST">
+            <div class="form-group">
+              <label for="service">Select a Service:</label>
+              <select id="service" name="service">
+                <option value="web-dev">Web Development</option>
+                <option value="software-dev">Software Development</option>
+                <option value="mobile-app">Mobile App Development</option>
+                <option value="database">Database Development</option>
+                <option value="web-design">Web Design</option>
+                <option value="it-consulting">IT Consulting</option>
+                <option value="tech-support">Technical Support</option>
+                <option value="data-science">Data Science</option>
+                <option value="cybersecurity">Cybersecurity</option>
+                <option value="game-dev">Game Development</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="member">Pick a Team Member:</label>
+              <select id="member" name="member">
+                <option value="Shifa Maknojia">Shifa Maknojia</option>
+                <option value="Nicolas Ambriz">Nicolas Ambriz</option>
+                <option value="Chasitty Ayala">Chasitty Ayala</option>
+                <option value="Muhammad Amin">Muhammad Amin</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Email</label>
+              <input id="email" name="email" placeholder="abc123@email.com?" />
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="How can we help you?"
+                style="height: 200px"
+              ></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Code Ninjas</p>
+    </footer>
+  </body>
+</html>

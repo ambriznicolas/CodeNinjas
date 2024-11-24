@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body class="about-page">
+    <header>
+      <img src="static/images/logo.jpg" alt="Code Ninjas Logo" />
+      <h1>Code Ninjas</h1>
+      {% include 'navbar.html' %}
+    </header>
+
+    <main class="page-content">
+      <section class="page-box">
+        <h2>About Code Ninjas</h2>
+        <p>
+          Code Ninjas is a dynamic platform offering a wide range of services
+          tailored to meet the growing demand for cutting-edge technology
+          solutions. Comprising a talented team of four Computer Science
+          students, Code Ninjas specializes in areas such as Artificial
+          Intelligence, Web Development, Full Stack Development, and Data
+          Science. With a passion for coding and a commitment to innovation, our
+          team works together to create impactful, data-driven solutions that
+          help businesses and individuals harness the power of technology.
+          Whether it's building intelligent systems, designing engaging
+          websites, or analyzing data to drive decision-making, Code Ninjas is
+          dedicated to providing high-quality, reliable, and forward-thinking
+          services.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Code Ninjas</p>
+    </footer>
+  </body>
+</html>

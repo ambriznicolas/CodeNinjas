@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contact - Chasitty Ayala</title>
+      <link rel="stylesheet" href="static/chasitty_css/style.css">
+   </head>
+   <body>
+
+        <div class=" container"> 
+        <h1> Chasitty Ayala</h1>
+  
+  
+          <img src ="static/images/chasitty.jpg" width = "120" height ="120" alt="Chasitty Ayala Pic"> 
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+         <ul>
+            <li><a href="/chasitty">Home</a></li>
+            <li><a href="index.html#resume">Resume</a></li>
+            <li><a href="index.html#programming-languages">Programming Languages</a></li>
+            <li><a href="/chasitty/contact">Contact</a></li>
+         </ul>
+      </nav>
+
+      <!-- Contact Form Section -->
+      <div class="container contact-form">
+         <h3>Contact Me</h3>
+         <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+         </form>
+         <div id="formFeedback" class="form-feedback"></div>
+      </div>
+
+      <script src="static/chasitty_script/script.js"></script>
+   </body>
+</html>

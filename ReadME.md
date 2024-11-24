@@ -1,14 +1,13 @@
-Steps in order for server to work type these in terminal:
+To run the application:
+python server.js
+
+Steps in order to send email (outllook):
 
 1.Install Python Flask
 
 pip install flask requests
 
-2.Make a .env file and enter api key there
+2.Make a .env-ex file and enter email and password
 
-install in terminal
+install in terminal to use environmental varaiables
 pip install python-dotenv
-
-3.Once you finish setting it up and have those installed, run the program
-
-python sever.js

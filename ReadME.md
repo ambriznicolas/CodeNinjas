@@ -7,7 +7,7 @@ Steps in order to send email (outllook):
 
 pip install flask requests
 
-2.Make a .env-ex file and enter email and password also add this file in .gitignore
+2.Make a .env-ex file and enter email and password also add this in .gitignore
 
 install in terminal to use environmental varaiables
 pip install python-dotenv

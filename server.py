@@ -42,6 +42,14 @@ def chassity_wp():
 @app.route('/chasitty-contact')
 def chasitty_contact():
     return render_template('/members/chasitty/contact.html') 
+@app.route('/chasitty-program')
+def chasitty_program():
+    return render_template('/members/chasitty/program.html')
+@app.route('/chasitty-resume')
+def chasitty_resume():
+    return render_template('/members/chasitty/resume.html')
+
+
  
 @app.route('/nicolas')
 def nico_wp():
